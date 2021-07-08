@@ -4,7 +4,7 @@ function App() {
   const options = ["Pikachu", "Charizard", "Charmander", "Squirtle"];
   return (
     <div className="App">
-      <Dropdown title={"Selecione seu Pokemon"} options={options} />
+      <Dropdown title={"Select your pokemon"} options={options} />
     </div>
   );
 }
