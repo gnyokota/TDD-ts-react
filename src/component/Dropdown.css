@@ -1,0 +1,89 @@
+.dropdown-wrapper {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.dropdown-wrapper > button {
+  background-color: yellow;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.dropdown-wrapper > button:hover {
+  transition: ease-in-out 0.5s;
+  background-color: black;
+  color: yellow;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.dropdown-wrapper > ul {
+  list-style: none;
+  margin: 1rem auto;
+  padding: 0;
+}
+
+li:nth-child(1) {
+  margin: 0 auto;
+  width: 10%;
+  background-color: yellow;
+  border-radius: 4px;
+}
+
+li:nth-child(1):hover {
+  background-color: white;
+  border: 1px solid yellow;
+}
+
+li:nth-child(2) {
+  margin: 0 auto;
+  width: 10%;
+  background-color: #8bc6ac;
+  border-radius: 4px;
+}
+
+li:nth-child(2):hover {
+  background-color: white;
+  border: 1px solid #8bc6ac;
+}
+
+li:nth-child(3) {
+  margin: 0 auto;
+  width: 10%;
+  background-color: orange;
+  border-radius: 4px;
+}
+
+li:nth-child(3):hover {
+  background-color: white;
+  border: 1px solid orange;
+}
+
+li:nth-child(4) {
+  margin: 0 auto;
+  width: 10%;
+  background-color: #66a0b4;
+  border-radius: 4px;
+}
+
+li:nth-child(4):hover {
+  background-color: white;
+  border: 1px solid #66a0b4;
+}
+
+.Pikachu {
+  color: yellow;
+}
+.Bulbasaur {
+  color: #8bc6ac;
+}
+.Charmander {
+  color: orange;
+}
+.Squirtle {
+  color: #66a0b4;
+}

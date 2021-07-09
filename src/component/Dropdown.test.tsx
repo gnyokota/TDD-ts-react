@@ -1,7 +1,7 @@
 import Dropdown from "./Dropdown";
 import { screen, render, userEvent } from "../test.config";
 
-const options = ["Pikachu", "Charizard", "Charmander", "Squirtle"];
+const options = ["Pikachu", "Bulbasaur", "Charmander", "Squirtle"];
 const title = "Select your Pokemon";
 
 describe("Dropdown", () => {
@@ -48,7 +48,8 @@ describe("Dropdown", () => {
 
     userEvent.click(screen.getByText(options[2]));
 
-    expect(screen.getByTestId("selection-title").innerHTML).toBe(options[2]);
+    const img = document.querySelector("img") as HTMLImageElement;
+    expect(img.alt).toContain("Charmander-img");
 
     expect(
       screen.queryByRole("menuitem", { name: options[0] })
