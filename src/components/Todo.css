@@ -1,0 +1,12 @@
+.todo-wrapper {
+  text-align: center;
+}
+
+.title {
+  color: green;
+}
+
+.strike {
+  color: red;
+  text-decoration: line-through;
+}
