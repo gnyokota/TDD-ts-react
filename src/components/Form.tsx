@@ -39,7 +39,9 @@ const Form = ({ handleSubmit }: Props) => {
           onChange={handleChange}
         />
         {data.email && validateInput(data.email) ? null : (
-          <span className="error">Enter a valid email</span>
+          <span className="error" data-testid="error">
+            Enter a valid email
+          </span>
         )}
         <label htmlFor="password">Password:</label>
         <input

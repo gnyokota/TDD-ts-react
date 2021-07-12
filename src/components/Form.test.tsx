@@ -1,16 +1,12 @@
-import {
-  fireEvent,
-  render,
-  RenderResult,
-  screen,
-} from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import Form, { validateInput } from "./Form";
 
 describe("login", () => {
   let component: any;
+  let handleSubmit: any;
 
   beforeEach(() => {
-    const handleSubmit = jest.fn;
+    handleSubmit = jest.fn();
     component = render(<Form handleSubmit={handleSubmit} />);
   });
 
@@ -31,10 +27,23 @@ describe("login", () => {
     expect(labelPass.getAttribute("name")).toBe("password");
   });
 
-  it("email input should accept text", () => {
+  it("should validate the email", () => {
     const inputNode = component.getByLabelText("Email:");
     expect(inputNode.value).toMatch("");
     fireEvent.change(inputNode, { target: { value: "testing" } });
     expect(inputNode.value).toMatch("testing");
+
+    const error = component.getByText("Enter a valid email");
+    expect(error).toBeInTheDocument();
+
+    fireEvent.change(inputNode, { target: { value: "testing@test.com" } });
+    expect(inputNode.value).toMatch("testing@test.com");
+    expect(error).not.toBeInTheDocument();
+  });
+
+  it("should be able to submit form", () => {
+    const submitbtn = component.getByRole("button");
+    fireEvent.submit(submitbtn);
+    expect(handleSubmit).toHaveBeenCalledTimes(1);
   });
 });
