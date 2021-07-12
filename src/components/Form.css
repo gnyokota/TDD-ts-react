@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap");
+
+* {
+  font-family: "Zen Loop", cursive;
+  font-size: 105%;
+}
+
+.form-wrapper {
+  margin: 1rem auto;
+  width: 30%;
+  padding: 2rem 5rem;
+}
+
+.form-wrapper > h1 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.form > input {
+  border: none;
+  border-bottom: 0.5px solid #d0d0d0 !important;
+}
+
+.form > input::placeholder {
+  color: #d0d0d0;
+}
+
+.form > button {
+  width: 25%;
+  margin: 1rem auto;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #66b4ce;
+  color: white;
+  border: 1px solid #66b4ce;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: ease-in-out 0.5s;
+}
+
+.form > button:hover {
+  background-color: white;
+  color: #66b4ce;
+}
