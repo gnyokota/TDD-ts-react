@@ -7,8 +7,10 @@ type Values = {
 };
 
 type Props = {
-  handleSubmit: (e: React.FormEvent<HTMLInputElement>) => void;
+  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 };
+
+export const validateInput = (str: string) => /\S+@\S+\.\S+/.test(str);
 
 const Form = ({ handleSubmit }: Props) => {
   const initialValues: Values = {
@@ -23,17 +25,16 @@ const Form = ({ handleSubmit }: Props) => {
     setData({ ...data, [name]: value });
   };
 
-  const validateInput = (str: string) => /\S+@\S+\.\S+/.test(str);
-
   return (
     <div className="form-wrapper">
       <h1>Form validation</h1>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
           placeholder="Email"
           name="email"
+          id="email"
           value={data.email}
           onChange={handleChange}
         />
@@ -45,6 +46,7 @@ const Form = ({ handleSubmit }: Props) => {
           type="password"
           placeholder="Password"
           name="password"
+          id="password"
           value={data.password}
           onChange={handleChange}
         />

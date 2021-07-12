@@ -21,6 +21,8 @@
 }
 
 .error {
+  margin: 0.5rem;
+  font-size: 1rem;
   color: red;
   font-weight: bold;
   text-align: center;

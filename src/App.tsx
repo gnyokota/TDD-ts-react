@@ -1,9 +1,10 @@
 import Form from "./components/Form";
 
 function App() {
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    console.log(e);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    console.log(event);
   };
 
   return (
